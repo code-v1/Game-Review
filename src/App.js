@@ -1,26 +1,63 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import SignupPage from '../src/pages/SignupPage/SignupPage';
+import LoginPage from '../src/pages/LoginPage/LoginPage';
+import userService from './utils/userService';
+
+
+class App extends Component {
+
+  constructor() {
+    super();
+    this.state ={
+      user: userService.getUser()
+    };
+  }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({ user: null });
+  }
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
+  render() {
+    return(
+      <div>
+      <header className='header-footer'>G A M E &nbsp;&nbsp;&nbsp;  R E V I E W</header>
+      <Switch>
+      <Route exact path='/signup' render={({ history }) => 
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+          <Route exact path='/login' render={({ history }) => 
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+      </Switch>
+      </div>
+    )
+  }
+
+
+
+
+
+
+
+
 }
+
+
+
+
 
 export default App;
