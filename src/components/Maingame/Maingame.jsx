@@ -4,13 +4,15 @@ import Image from 'react-bootstrap/Image'
 import './Maingame.css'
 
 
-const Example = (props) => {
+const Game = (props) => {
   return (
     <div>
       <Jumbotron>
         <h3 className="display-1">Featured Game</h3>
         <div>
         <Image src={require("../../images/fightingGameplay.jpeg")} alt="" rounded/>
+        <h3>RAGE 2</h3>
+        
         </div>
         <hr className="my-2" />
         <p>Rage 2 is one of the video gamiest video games I’ve ever played.
@@ -26,4 +28,4 @@ The game’s designers didn’t just borrow ideas from a couple iconic first-per
   );
 };
 
-export default Example;
+export default Game;
