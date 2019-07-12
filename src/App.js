@@ -7,6 +7,10 @@ import LoginPage from '../src/pages/LoginPage/LoginPage';
 import userService from './utils/userService';
 import NavBar from './components/Navbar/Navbar'
 import Maingame from './components/Maingame/Maingame'
+import Gamecard1 from './components/Gamecard/Gamecard1'
+import Gamecard2 from './components/Gamecard/Gamecard2'
+import Gamecard3 from './components/Gamecard/Gamecard3'
+
 
 
 class App extends Component {
@@ -33,6 +37,9 @@ class App extends Component {
       <header className='header-footer'>G A M E &nbsp;&nbsp;&nbsp;  R E V I E W</header>
       <NavBar />
       <Maingame />
+      <Gamecard1 />
+      <Gamecard2 />
+      <Gamecard3 />
       <Switch>
       <Route exact path='/signup' render={({ history }) => 
             <SignupPage
