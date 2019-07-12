@@ -7,3 +7,8 @@
   .NavBar-link {
     margin: 0 10px;
   }
+
+  .login {
+      position: relative;
+      left: 60vw;
+  }
