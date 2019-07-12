@@ -5,6 +5,8 @@ import './App.css';
 import SignupPage from '../src/pages/SignupPage/SignupPage';
 import LoginPage from '../src/pages/LoginPage/LoginPage';
 import userService from './utils/userService';
+import NavBar from './components/Navbar/Navbar'
+import Maingame from './components/Maingame/Maingame'
 
 
 class App extends Component {
@@ -29,6 +31,8 @@ class App extends Component {
     return(
       <div>
       <header className='header-footer'>G A M E &nbsp;&nbsp;&nbsp;  R E V I E W</header>
+      <NavBar />
+      <Maingame />
       <Switch>
       <Route exact path='/signup' render={({ history }) => 
             <SignupPage
