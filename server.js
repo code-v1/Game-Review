@@ -5,7 +5,7 @@ const logger = require('morgan');
 
 const app = express();
 
-require('dotenv').config({ path: 'ENV_FILENAME' });
+require('dotenv').config();
 require('./config/database');
 
 app.use(logger('dev'));
