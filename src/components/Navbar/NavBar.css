@@ -1,7 +1,7 @@
 .NavBar {
     display: flex;
     justify-content: center;
-    margin: 0 0 20px;
+    margin: 0 0 40px;
   }
   
   .NavBar-link {
@@ -9,6 +9,8 @@
   }
 
   .login {
-      position: relative;
-      left: 60vw;
+      position: inherit;
+      display: flex;
+      justify-content: center;
+      width: 40vmin;
   }
