@@ -3,6 +3,7 @@ import { Jumbotron, Button } from 'reactstrap';
 import Image from 'react-bootstrap/Image'
 import { Card, CardImg, CardText, CardBody,
   CardTitle} from 'reactstrap';
+import './GamesList.css';
 
 
 export default class GamesList extends Component {
@@ -41,17 +42,6 @@ The game’s designers didn’t just borrow ideas from a couple iconic first-per
 </Card>
 <Card className='box' style={{ width: '18rem' }}>
   <CardImg variant="top" src={require("../../images/godfight.jpeg")} />
-  <CardBody>
-    <CardTitle>Card Title</CardTitle>
-    <CardText>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
-    </CardText>
-    <Button variant="primary">More</Button>
-  </CardBody>
-</Card>
-<Card className='box' style={{ width: '18rem' }}>
-  <CardImg variant="top" src={require("../../images/gtaV.jpeg")} />
   <CardBody>
     <CardTitle>Card Title</CardTitle>
     <CardText>
