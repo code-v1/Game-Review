@@ -3,10 +3,20 @@ import { Jumbotron, Button } from 'reactstrap';
 import Image from 'react-bootstrap/Image'
 import { Card, CardImg, CardText, CardBody,
   CardTitle} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 import './GamesList.css';
 
 
 export default class GamesList extends Component {
+    constructor(props) {
+        super(props);
+
+        this.deleteGame = this.deleteGame.bind(this);
+
+        this.state = {excercises: []};
+    }
+
     render()
 {
             return (
