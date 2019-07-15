@@ -10,7 +10,7 @@ export default class NavBar extends Component  {
   render() {
   return (
     <div>
-        <Nav tabs>
+        <Nav >
             <Link to="/User">My Account</Link>
             <Link to="/GamesList">Games</Link>
             <Link to="/Create">Create Game Review</Link>
