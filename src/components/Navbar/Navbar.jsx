@@ -10,12 +10,18 @@ export default class NavBar extends Component  {
   render() {
   return (
     <div>
-        <Nav >
+        <Nav tabs>
+        <NavItem className='login'>
             <Link to="/User">My Account</Link>
-            <Link to="/GamesList">Games</Link>
-            <Link to="/Create">Create Game Review</Link>
+            </NavItem>
             <NavItem className='login'>
-            < Link to="/signup">Sign In</Link> 
+            <Link to="/GamesList">Games</Link>
+            </NavItem>
+            <NavItem className='login'>
+            <Link to="/Create">Create Game Review</Link>
+            </NavItem>
+            <NavItem className='login'>
+            <Link to="/signup">Sign Up</Link> 
             </NavItem>
             <NavItem className='login'>
             <Link to="/login">Log In</Link> 
@@ -26,11 +32,5 @@ export default class NavBar extends Component  {
   };
 };
 
-//     <div className='NavBar'>
-//       <Link to="/login" className='NavBar-link'>LOG IN</Link>
-//       &nbsp;&nbsp;|&nbsp;&nbsp;
-//       <Link to="/signup" className='NavBar-link'>SIGN UP</Link>
-//     </div>
-//   );
-// };
+
 
