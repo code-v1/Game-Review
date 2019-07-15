@@ -7,14 +7,11 @@ import SignupPage from '../src/pages/SignupPage/SignupPage';
 import LoginPage from '../src/pages/LoginPage/LoginPage';
 import userService from './utils/userService';
 import NavBar from './components/Navbar/Navbar';
-import Maingame from './components/Maingame/Maingame';
-import Gamecard1 from './components/Gamecard/Gamecard1';
-import Gamecard2 from './components/Gamecard/Gamecard2';
-import Gamecard3 from './components/Gamecard/Gamecard3';
 import ShowUser from './components/ShowUser/ShowUser';
 import GamesList from './components/GamesList/GamesList';
 import CreateGame from './components/CreateGame/CreateGame';
 import EditGame from './components/EditGame/EditGame';
+
 // import GamesList from 
 
 
