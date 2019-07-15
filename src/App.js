@@ -1,15 +1,21 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route,  BrowserRouter as Router } from 'react-router-dom';
 //imports components
 import './App.css';
 import SignupPage from '../src/pages/SignupPage/SignupPage';
 import LoginPage from '../src/pages/LoginPage/LoginPage';
 import userService from './utils/userService';
-import NavBar from './components/Navbar/Navbar'
-import Maingame from './components/Maingame/Maingame'
-import Gamecard1 from './components/Gamecard/Gamecard1'
-import Gamecard2 from './components/Gamecard/Gamecard2'
-import Gamecard3 from './components/Gamecard/Gamecard3'
+import NavBar from './components/Navbar/Navbar';
+import Maingame from './components/Maingame/Maingame';
+import Gamecard1 from './components/Gamecard/Gamecard1';
+import Gamecard2 from './components/Gamecard/Gamecard2';
+import Gamecard3 from './components/Gamecard/Gamecard3';
+import ShowUser from './components/ShowUser/ShowUser';
+import GamesList from './components/GamesList/GamesList';
+import CreateGame from './components/CreateGame/CreateGame';
+import EditGame from './components/EditGame/EditGame';
+// import GamesList from 
 
 
 
@@ -40,7 +46,14 @@ class App extends Component {
       <Gamecard1 />
       <Gamecard2 />
       <Gamecard3 />
-      <Switch>
+      
+      
+      <Router>
+      <Route path='/' exact component={GamesList} />
+     <Route path='/edit/:id' exact component={EditGame} />
+     <Route path='/create' exact component={CreateGame} />
+     <Route path='/user' exact component={ShowUser} /> 
+      
       <Route exact path='/signup' render={({ history }) => 
             <SignupPage
               history={history}
@@ -53,7 +66,9 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-      </Switch>
+          </Router>
+      
+      
       </div>
     )
   }
