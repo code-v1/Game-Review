@@ -1,26 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 // import { Link } from 'react-router-dom';
-import {Nav, NavLink, NavItem} from 'reactstrap';
+import {Nav, NavItem} from 'reactstrap';
+import { Link } from 'react-router-dom';
 import './NavBar.css';
 
 
 
-const NavBar = () => {
+export default class NavBar extends Component  {
+  render() {
   return (
     <div>
         <Nav tabs>
-            <NavLink href="#">My Account</NavLink>
-            <NavLink href="#">Games</NavLink>
+            <Link to="/User">My Account</Link>
+            <Link to="/GamesList">Games</Link>
+            <Link to="/Create">Create Game Review</Link>
             <NavItem className='login'>
-            <NavLink href="#">Sign In</NavLink> 
+            < Link to="/signup">Sign In</Link> 
             </NavItem>
             <NavItem className='login'>
-            <NavLink href="#">Log In</NavLink> 
+            <Link to="/login">Log In</Link> 
             </NavItem>
         </Nav>
       </div>
-    );
-  }
+    )
+  };
+};
 
 //     <div className='NavBar'>
 //       <Link to="/login" className='NavBar-link'>LOG IN</Link>
@@ -30,4 +34,3 @@ const NavBar = () => {
 //   );
 // };
 
-export default NavBar;
