@@ -41,15 +41,13 @@ class App extends Component {
     return(
       <div>
       <header className='header-footer'>G A M E &nbsp;&nbsp;&nbsp;  R E V I E W</header>
-      <NavBar />
-      <Maingame />
-      <Gamecard1 />
-      <Gamecard2 />
-      <Gamecard3 />
-      
-      
       <Router>
-      <Route path='/' exact component={GamesList} />
+      <NavBar />
+      
+      
+      
+    
+     <Route path='/GamesList' exact component={GamesList} />
      <Route path='/edit/:id' exact component={EditGame} />
      <Route path='/create' exact component={CreateGame} />
      <Route path='/user' exact component={ShowUser} /> 
