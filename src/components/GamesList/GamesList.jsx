@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import { Jumbotron, Button } from 'reactstrap';
-import Image from 'react-bootstrap/Image'
-import { Card, CardImg, CardText, CardBody,
-  CardTitle} from 'reactstrap';
+// import { Jumbotron, Button } from 'reactstrap';
+// import Image from 'react-bootstrap/Image'
+// import { Card, CardImg, CardText, CardBody,
+//   CardTitle} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './GamesList.css';
@@ -13,7 +13,7 @@ const Game = props => (
     <td>{props.game.description}</td>
     <td>{props.game.date.substring(0,10)}</td>
     <td>
-      <Link to={"/edit/"+props.game._id}>edit</Link> | <a href="#" onClick={() => { props.deleteGame(props.game._id) }}>delete</a>
+      <Link to={"/edit/"+props.game._id}>edit</Link> | <a href="/" onClick={() => { props.deleteGame(props.game._id) }}>delete</a>
     </td>
   </tr>
 )
