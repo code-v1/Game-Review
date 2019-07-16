@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React, { Component } from 'react';
-import { Route,  BrowserRouter as Router } from 'react-router-dom';
+import { Route,  BrowserRouter as Router, Redirect } from 'react-router-dom';
 //imports components
 import './App.css';
 import SignupPage from '../src/pages/SignupPage/SignupPage';
@@ -13,6 +13,8 @@ import CreateGame from './components/CreateGame/CreateGame';
 import EditGame from './components/EditGame/EditGame';
 
 // import GamesList from 
+
+
 
 
 
@@ -34,20 +36,41 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  
+
   render() {
     return(
       <div>
       <header className='header-footer'>G A M E &nbsp;&nbsp;&nbsp;  R E V I E W</header>
       <Router>
-      <NavBar />
+      <NavBar 
+      handleLogout={this.handleLogout}
+      />
       
       
       
     
      <Route path='/GamesList' exact component={GamesList} />
      <Route path='/edit/:id' exact component={EditGame} />
-     <Route path='/create' exact component={CreateGame} />
-     <Route path='/user' exact component={ShowUser} /> 
+     <Route  exact path='/create' render={() => 
+      userService.getUser() ?
+      <CreateGame /> 
+      :
+      <Redirect to='/login'/>
+
+     } 
+     
+     
+     />
+
+     <Route path='/user' render={() => 
+      userService.getUser() ?
+      <ShowUser /> 
+      :
+      <Redirect to='/login'/>
+
+     } 
+     />
       
       <Route exact path='/signup' render={({ history }) => 
             <SignupPage
