@@ -11,6 +11,7 @@ import ShowUser from './components/ShowUser/ShowUser';
 import GamesList from './components/GamesList/GamesList';
 import CreateGame from './components/CreateGame/CreateGame';
 import EditGame from './components/EditGame/EditGame';
+import MainGame from './components/MainGame/MainGame'
 
 // import GamesList from 
 
@@ -49,7 +50,7 @@ class App extends Component {
       
       
       
-    
+     <Route path='/' exact component={MainGame}/>
      <Route path='/GamesList' exact component={GamesList} />
      <Route path='/edit/:id' exact component={EditGame} />
      <Route  exact path='/create' render={() => 
