@@ -8,10 +8,12 @@ function signup(user) {
     method: 'POST',
     headers: new Headers({'Content-Type': 'application/json'}),
     body: JSON.stringify(user)
+
   })
   .then(res => {
-    console.log('res')
+    
     if (res.ok) return res.json();
+    console.log(res.json())
     // Probably a duplicate email
     throw new Error('Email already taken!');
   })
